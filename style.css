@@ -4,3 +4,22 @@ body {
   color: white;
   text-align: center;
 }
+
+.countdown {
+    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
+    font-size: xx-large;
+
+    position:absolute;
+  top: 0; bottom: 0; left: 0; right: 0;
+  margin: auto;
+  height: 20px; /*requires explicit height*/
+}
+
+.banner {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+#openseabadge {
+  
+}

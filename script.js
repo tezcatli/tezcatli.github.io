@@ -1,6 +1,9 @@
 document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
 
-var countDownDate = new Date("Dec 20, 2021 21:30:00").getTime();
+//var countDownDate = new Date("Dec 23, 2021 19:09:30").getTime();
+
+var countDownDate = new Date( new Date().getTime() + 10000)
+
 
 // Update the count down every 1 second
 var x = setInterval(function () {
@@ -23,9 +26,10 @@ var x = setInterval(function () {
   // If the count down is finished, write some text
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("countdown").style.visibility = 'hidden'
+    //document.getElementById("countdown").style.visibility = 'hidden'
+    document.getElementById("countdown").remove()
     fetch(
-      "https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/95035838694622143585208030138072912698626519418871291432449268800656542531585"
+      "https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/95035838694622143585208030138072912698626519418871291432449268801756054159361/"
     )
       .then((response) => response.json())
       .then((response) => {
@@ -38,7 +42,10 @@ var x = setInterval(function () {
 
         div = document.createElement("div")
 
-        div.innerHTML = "Claim your unique NFT"
+        div.innerHTML = `<h3>Available on opensea.  Send your wallet id to your beloved brother to claim this unique NFT.  </h3><p>
+          
+          <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/95035838694622143585208030138072912698626519418871291432449268801756054159361/"> 
+          <img src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);"></a>`
 
         dom.appendChild(div)
 
