@@ -3,16 +3,90 @@ body {
   background: #f06d06;
   color: white;
   text-align: center;
+
+
+
 }
 
-.countdown {
-    font-family: Courier New,Courier,Lucida Sans Typewriter,Lucida Typewriter,monospace; 
-    font-size: xx-large;
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 
-    position:absolute;
-  top: 0; bottom: 0; left: 0; right: 0;
-  margin: auto;
-  height: 20px; /*requires explicit height*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: auto;
+  /* Just to visualize the extent */
+}
+
+
+@media (orientation: portrait) {
+
+  #content {
+    display: flex;
+
+    flex-direction: column;
+    align-items: stretch;
+
+    flex: 1;
+
+    justify-content: center;
+  }
+
+  #divid{
+    display: flex;
+    flex-direction: column;
+    /* align-items: stretch; */
+    
+    align-items : stretch;
+    justify-items: center;
+    flex : 1
+
+    vertical-align: center;
+
+  }
+
+}
+
+@media (orientation: landscape) {
+
+  #content {
+    display: flex;
+
+    flex-direction: column;
+    /* align-items: stretch; */
+    align-items : center;
+
+    flex: 1;
+
+    justify-content: center;
+
+    
+  }
+
+  #divid{
+    display: flex;
+    flex-direction: row;
+    /* align-items: stretch; */
+    justify-content: stretch;
+    align-items : stretch;
+  }
+
+}
+
+
+
+.countdown {
+  font-family: Courier New, Courier, Lucida Sans Typewriter, Lucida Typewriter, monospace;
+  font-size: 64pt;
+
+}
+
+h2 {
+  font-size: 32pt;
 }
 
 .banner {
@@ -20,6 +94,13 @@ body {
   margin-bottom: 0;
 }
 
+#image {
+min-width: none;
+min-height: none ;
+}
+
+
 #openseabadge {
-  
+  width: 400px,
+    height: 300px
 }

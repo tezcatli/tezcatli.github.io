@@ -1,8 +1,8 @@
 document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
 
-//var countDownDate = new Date("Dec 23, 2021 19:09:30").getTime();
+var countDownDate = new Date("Dec 24, 2021 21:00:00").getTime();
 
-var countDownDate = new Date( new Date().getTime() + 10000)
+//var countDownDate = new Date( new Date().getTime() + 5000)
 
 
 // Update the count down every 1 second
@@ -27,25 +27,41 @@ var x = setInterval(function () {
   if (distance < 0) {
     clearInterval(x);
     //document.getElementById("countdown").style.visibility = 'hidden'
-    document.getElementById("countdown").remove()
+    //document.getElementById("countdown").remove()
     fetch(
       "https://api.opensea.io/api/v1/asset/0x495f947276749ce646f68ac8c248420045cb7b5e/95035838694622143585208030138072912698626519418871291432449268801756054159361/"
     )
       .then((response) => response.json())
       .then((response) => {
-        dom = document.getElementById("expired");
+        dom = document.getElementById("content");
+        dom.innerHTML = ""
 
-        const image = document.createElement("img");
-        image.src = response.image_url;
+        //const image = document.createElement("img");
+        //image.src = response.image_url;
+        //image.id = "image"
         //dom.replaceWith(image);
-        dom.appendChild(image)
+        //dom.appendChild(image)
 
         div = document.createElement("div")
 
-        div.innerHTML = `<h3>Available on opensea.  Send your wallet id to your beloved brother to claim this unique NFT.  </h3><p>
+        div.innerHTML = `
+        <img src="${response.image_url}" id='image'>
+        
+        `
+        div.id='divid'
+        dom.appendChild(div)
+
+        div = document.createElement("div")
+
+        div.innerHTML = `
+        <h2>Available on opensea. <br> Send your wallet id to your beloved brother to claim this unique NFT.  </h3><p>
+
+    
           
-          <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/95035838694622143585208030138072912698626519418871291432449268801756054159361/"> 
-          <img src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);"></a>`
+          <a href="https://opensea.io/assets/0x495f947276749ce646f68ac8c248420045cb7b5e/95035838694622143585208030138072912698626519418871291432449268801756054159361/" > 
+          <img src="https://storage.googleapis.com/opensea-static/Logomark/Badge%20-%20Available%20On%20-%20Light.png" style="width:220px; border-radius:5px; box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.25);">
+          
+          </a>`
 
         dom.appendChild(div)
 
