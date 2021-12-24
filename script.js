@@ -1,6 +1,6 @@
 document.getElementsByTagName("h1")[0].style.fontSize = "6vw";
 
-var countDownDate = new Date("Dec 24, 2021 21:00:00").getTime();
+var countDownDate = new Date("Dec 24, 2021 20:45:00").getTime();
 
 //var countDownDate = new Date( new Date().getTime() + 5000)
 
